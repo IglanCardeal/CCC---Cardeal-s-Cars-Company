@@ -30,17 +30,19 @@
     }
     /* - - -           FIM JSON                    - - - */
 
+    // Esta função adicionar um listener de evntos ao botão
     function startEvents(){
       $('[data-js="button"]').on('click', handleCadastrar);
     }
 
+    // Esta função seleciona o elemento table e adiciona o conteúdo
     function handleCadastrar(event){
       event.preventDefault();
       let table = $('[data-js="cartable"]').get();
       table.appendChild(createTableText());
-
     }
 
+    // Esta função cria os elementos que serão incluidos no table
     function createTableText(){
       let fragment = document.createDocumentFragment();
       let tr = document.createElement('tr');
@@ -54,9 +56,9 @@
 
       setTextValue(tdMaker, tdModel, tdYear, tdColor, tdImg, img, url);
       return addElements(fragment, tr, tdMaker, tdModel, tdYear, tdColor, tdImg);
-
     }
 
+    // Esta função setta os valores de cada coluna(td) da linha(tr)
     function setTextValue(tdMaker, tdModel, tdYear, tdColor, tdImg, img, url){
       tdMaker.textContent = $('[data-js="maker"]').get().value;
       tdModel.textContent = $('[data-js="model"]').get().value;
@@ -66,6 +68,7 @@
       tdImg.appendChild(img);
     }
 
+    // Esta função adiciona os elementos a tr e ao fragment
     function addElements(fragment, tr, tdMaker, tdModel, tdYear, tdColor, tdImg){
       tr.appendChild(tdMaker);
       tr.appendChild(tdModel);
@@ -77,6 +80,7 @@
       return fragment;
     }
 
+    // Estas funções são executadas ao carregar o JS
     startEvents();
     getCompanyData();
   }
