@@ -30,7 +30,7 @@
     }
     /* - - -           FIM JSON                    - - - */
 
-    // Esta função adicionar um listener de evntos ao botão
+    // Esta função adiciona um listener de eventos ao botão
     function startEvents(){
       $('[data-js="button"]').on('click', handleCadastrar);
     }
