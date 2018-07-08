@@ -80,7 +80,7 @@
       return fragment;
     }
 
-    // Estas funções são executadas ao carregar o JS
+    // Estas funções são executadas ao carregar o todo o document
     startEvents();
     getCompanyData();
   }
