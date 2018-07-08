@@ -7,7 +7,7 @@
   function init(){
     /* - - - JSON PARA O 'NAME' E 'PHONE' DA EMPRESA - - - */
     let ajax = new XMLHttpRequest();
-    ajax.open('GET', 'company.json', true);
+    ajax.open('GET', 'json/company.json', true);
     ajax.send();
 
     function getCompanyData(){
