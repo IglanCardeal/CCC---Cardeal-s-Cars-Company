@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/challenge-31.css"/>
+  <link rel="icon" href="img/iconeChallenge-31.png"/>
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+  <title>Challenge 31</title>
+</head>
+<body>
+  <div class="interface">
+    <header>
+      <h1><input type="text" class="company" data-js="company" value="" readonly></h1>
+      <h2><input type="text" class="phone" data-js="phone" value="" readonly></h2>
+    </header>
+    <form class="inputs" data-js="cadastrar">
+      <h1 class="titles">
+        Insira os dados a serem cadastrados logo abaixo
+      </h1>
+      <p>
+        Informe o fabricante:
+        <input type="text" data-js="maker" class="insert">
+        <br>
+        Informe o modelo:
+        <input type="text" data-js="model" class="insert">
+        <br>
+        Informe o ano:
+        <input type="text" data-js="year" class="insert">
+        <br>
+        Informe a cor:
+        <input type="text" data-js="color" class="insert">
+        <br>
+        Carregar imagem:
+        <input type="url" data-js="image" class="insert" >
+        <br>
+        <button type="submit" class="insert" data-js="button">CADASTRAR CARRO</button>
+      </p>
+    </form>
+    <section class="content">
+     <table class="table">
+       <thead>
+         <tr>
+           <th id="maker">Fabricante</th>
+           <th>Modelo</th>
+           <th>Ano</th>
+           <th>Cor</th>
+           <th>Imagem</th>
+           <th>
+             <button type="button" class="content" data-js="remover">Remover</button>
+           </th>
+         </tr>
+       </thead>
+       <tbody class="roll" data-js="cartable">
+       </tbody>
+     </table>
+    </section>
+
+  </div>
+  <script src="lib/DOM.js"></script>
+  <script src="javascript/challenge-31.js"></script>
+</body>
+</html>
