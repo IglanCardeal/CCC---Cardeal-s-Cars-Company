@@ -65,7 +65,7 @@
 
     // Esta função setta os valores de cada coluna(td) da linha(tr)
     function setTextValue(tdRemove, tdMaker, tdModel, tdYear, tdColor, tdImg, img, url){
-      tdRemove.setAttribute('type', 'radio');
+      tdRemove.setAttribute('type', 'checkbox');
       tdRemove.setAttribute('data-js', idNumber);
       tdMaker.textContent = $('[data-js="maker"]').get().value;
       tdModel.textContent = $('[data-js="model"]').get().value;
