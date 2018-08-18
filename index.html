@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/challenge-31.css"/>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
   <link rel="icon" href="img/iconeChallenge-31.png"/>
   <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
   <title>Challenge 31</title>
 </head>
 <body>
-  <div class="interface">
+  <div class="interface container">
     <header>
       <h1><input type="text" class="company" data-js="company" value="" readonly></h1>
       <h2><input type="text" class="phone" data-js="phone" value="" readonly></h2>
@@ -33,7 +34,7 @@
         Carregar imagem:
         <input type="url" data-js="image" class="insert" >
         <br>
-        <button type="submit" class="insert" data-js="button">CADASTRAR CARRO</button>
+        <button type="submit" class="btn btn-primary btn-lg" data-js="button">CADASTRAR CARRO</button>
       </p>
     </form>
     <section class="content">
@@ -46,7 +47,7 @@
            <th>Cor</th>
            <th>Imagem</th>
            <th>
-             <button type="button" class="content" id="remover" data-js="remover">Remover</button>
+             <button type="button" class="btn btn-danger"  data-js="remover">Remover</button>
            </th>
          </tr>
        </thead>
