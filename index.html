@@ -7,19 +7,51 @@
   <link rel="icon" href="img/iconeChallenge-31.png"/>
   <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
   <title>Challenge 31</title>
-  <!-- <style>
-    input{
+  <style>
+    .interface{
+      margin-top: 30px;
+    }
+    h1{
       text-align: center;
     }
-  </style> -->
+    body{
+      background-image: url("./img/img1.jpg");
+    }
+    h1, label{
+      color: whitesmoke;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container interface">
     <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
       <input type="text" class="company form-control text-center" data-ja="company" value="" readonly>
       <br>
       <input type="text" class="phone form-control text-center" data-js="phone" value="" readonly>
     </div>
+  </div>
+
+  <div class="container">
+      <form>
+          <h1>Insira os dados a serem casdastrados logo abaxio</h1>
+          <div class="form-group">
+            <label>Informe o fabricante:</label>
+            <input class="form-control text-center">
+            <br>
+            <label>Informe o modelo:</label>
+            <input class="form-control text-center">
+            <br>
+            <label>Informe o ano:</label>
+            <input class="form-control text-center">
+            <br>
+            <label>Informe a cor:</label>
+            <input class="form-control text-center">
+            <br>
+            <label>Carregar uma imagem:</label>
+            <input class="form-control text-center" placeholder="OPCIONAL">
+            <br>
+          </div>
+        </form>
   </div>
 
   <script src="lib/DOM.js"></script>
