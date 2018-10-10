@@ -1,0 +1,52 @@
+body{
+  background-image: url('../img/img1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-y: 0px;
+}
+.interface{
+  width: 1200px;
+  height: auto;
+  background-color: rgb(0,0,0,0.5);
+  border: 2px ridge rgb(0, 40, 200);
+  border-radius: 15px;
+  margin-left: 330px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-family: 'Bree Serif';
+  font-style: normal;
+  font-size: 20px;
+  text-shadow: 0px 2px 3px darkblue;
+  min-width: 400px;
+}
+#company, #phone{
+  background-color: rgba(0,0,0,0);
+  border: none;
+  font-size: 30px;
+  color: whitesmoke;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.phone{
+  margin-left: 50px;
+}
+.formulario h2, label{
+  color: whitesmoke;
+  text-align: center;
+}
+.tabela{
+  margin-top: 50px;
+  color: whitesmoke;
+  background-color: rgba(0,0,0,0.7);
+  margin-bottom: 20px;
+  border: 2px ridge darkgrey;
+  border-radius: 15px;
+}
+img{
+  max-block-size: 60px;
+  border: 2px groove rgba(0, 40, 200, 0.5);
+  border-radius: 8px;
+}
+#remover{
+  width: 100px;
+}

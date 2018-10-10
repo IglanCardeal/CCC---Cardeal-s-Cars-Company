@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/challenge-31.css"/>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+  <link rel="icon" href="img/iconeChallenge-31.png"/>
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+  <title>Challenge 31</title>
+</head>
+<body>
+  <div class="container interface col-md-10 col-md-offset-1">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <input type="text" class="form-control text-center" data-js="company" id="company" value="" readonly>
+        <br>
+        <input type="text" class="form-control text-center" data-js="phone" id="phone" value="" readonly>
+      </div>
+    </div>
+    <div class="row">
+      <div class="formulario">
+        <h2>Insira os dados a serem cadastrados logo abaixo</h2>
+          <form class="form-group">
+            <div class="form-group col-md-6 col-md-offset-3">
+              <label>Informe o fabricante:</label>
+              <input class="form-control text-center">
+              <br>
+              <label>Informe o modelo:</label>
+              <input class="form-control text-center">
+              <br>
+              <label>Informe o ano:</label>
+              <input class="form-control text-center">
+              <br>
+              <label>Informe a cor:</label>
+              <input class="form-control text-center">
+              <br>
+              <label>Carregar uma imagem:</label>
+              <input class="form-control text-center" placeholder="OPCIONAL">
+              <br>
+              <button type="submit" class="btn btn-primary">CADASTRAR</button>
+            </div>
+          </form>
+        </div>
+    </div>
+    <div class="tabela">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Motor</th>
+                <th scope="col">Ano</th>
+                <th scope="col">Imagem</th>
+                <th scope="col">Remover</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td><img src="https://cnet1.cbsistatic.com/img/7zrJyEaUzvc-GA1lmdJ6sO0blG8=/970x0/2018/06/29/c4f1b5ce-8c50-4fdd-99ef-c219d2b5122a/2019-bmw-x4-37.jpg"></td>
+                <td><input class="btn btn-sm btn-danger" idCarro="" value="remover" readonly></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="lib/DOM.js"></script>
+  <script src="javascript/challenge-31.js"></script>
+</body>
+</html>

@@ -1,2 +1,2 @@
-* Projeto de Cadastro de Veículos (no DB)
-* Inclusão de banco de dados será feito em breve utilizando linguagem para o back-end: NodeJS ou PHP
+* Projeto CCC (challenge-30) - HOMOLOGAÇÃO
+* Versão final estará na branch master.
