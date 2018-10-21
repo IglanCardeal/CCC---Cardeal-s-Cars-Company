@@ -1,4 +1,4 @@
-* <h1>Projeto CCC (challenge-32)</h1>
+* <h1>Projeto CCC (challenge-33)</h1>
 * <h2>projeto completo na branch master.</h2>
 <br>
 <p>
@@ -15,7 +15,7 @@
 <p>
   Para começar a testar este projeto, será necessário realizar a conexão com o banco de dados MySQL ajustando os parâmetros no arquivo ./server/dataBase.js alterando para os dados do banco local.<br>
   <img src="./description/dataBase.png" /><br>
-  Após isso executar o código sQL abaixo que irá criar a database e a tabela necessária para funcionar o projeto.<br>
+  Após isso executar o código SQL abaixo que irá criar a database e a tabela necessária para funcionar o projeto.<br>
   <img src="./description/sql.png" /><br>
 </p>
 <p>
