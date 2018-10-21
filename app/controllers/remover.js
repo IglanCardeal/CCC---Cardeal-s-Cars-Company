@@ -1,16 +1,18 @@
 const controller = {
-  index: (app, req, res) => {
+  remover: (app, req, res) => {
     let connection = app.server.dataBase();
     let carDAO = new app.app.models.CarsDAO(connection);
+    let car = req.body;
+    console.log(car);
 
-    carDAO.listar((error, result) => {
+    carDAO.remover(car, (error, result) => {
       if(error)
         throw error;
-      if(!result)
-        result = '';
-      res.render('index.ejs', {cars: result});
+      connection = null;
+      carDAO = null;
+      res.redirect('/');
     });
   }
-}
+};
 
 module.exports = controller;

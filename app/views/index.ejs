@@ -11,41 +11,42 @@
 <body>
   <div class="container interface col-md-8 col-md-offset-2">
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
+      <div class="col-sm-10 col-sm-offset-1">
         <input type="text" class="form-control text-center" data-js="company" id="company" value="" readonly>
         <br>
         <input type="text" class="form-control text-center" data-js="phone" id="phone" value="" readonly>
       </div>
     </div>
     <div class="row">
-      <div class="formulario">
+      <div class="formulario" >
         <h2>Insira os dados a serem cadastrados logo abaixo</h2>
-          <form class="form-group">
+          <form class="form-group" action="/cadastrar" method="POST">
             <div class="form-group col-md-6 col-md-offset-3">
               <label>Informe o fabricante:</label>
-              <input class="form-control text-center entrada">
+              <input class="form-control text-center entrada" data-js="maker" name="maker">
               <br>
               <label>Informe o modelo:</label>
-              <input class="form-control text-center entrada">
+              <input class="form-control text-center entrada" data-js="model" name="model">
+              <br>
+              <label>Informe o motor:</label>
+              <input class="form-control text-center entrada" data-js="engine" name="engine">
               <br>
               <label>Informe o ano:</label>
-              <input class="form-control text-center entrada">
-              <br>
-              <label>Informe a cor:</label>
-              <input class="form-control text-center entrada">
+              <input class="form-control text-center entrada" data-js="year" name="year">
               <br>
               <label>Carregar uma imagem:</label>
-              <input class="form-control text-center" placeholder="OPCIONAL">
+              <input class="form-control text-center" data-js="imgUrl" name="imgUrl" placeholder="OPCIONAL">
               <br>
-              <button type="submit" class="btn btn-primary">CADASTRAR</button>
+              <input type="submit" class="btn btn-primary" data-js="button" value="CADASTRAR">
             </div>
           </form>
         </div>
     </div>
-    <% if(true){ %> <!-- if para verificar o objeto de resposta do servidor -->
+    <% if(cars){ %> <!-- if para verificar o objeto de resposta do servidor -->
       <div class="tabela">
         <div class="row">
           <div class="col-md-12">
+            <h2>CARROS CADASTRADOS</h2>
             <table class="table">
               <thead>
                 <tr>
@@ -58,13 +59,21 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td><img src="https://cnet1.cbsistatic.com/img/7zrJyEaUzvc-GA1lmdJ6sO0blG8=/970x0/2018/06/29/c4f1b5ce-8c50-4fdd-99ef-c219d2b5122a/2019-bmw-x4-37.jpg"></td>
-                  <td><input class="btn btn-sm btn-danger" idCarro="" value="remover" readonly></td>
+                <% for(let i = 0; i < cars.length; i++){ %>
+                  <tr>
+                    <td><%=cars[i].maker%></td>
+                    <td><%=cars[i].model%></td>
+                    <td><%=cars[i].engine%></td>
+                    <td><%=cars[i].year%></td>
+                    <%if(!cars[i].imgUrl) { %>
+                      <td><img class="img" src="img/standard.jpg"></td>
+                    <% } %>
+                    <% if(cars[i].imgUrl){ %>
+                      <td><a href="<%=cars[i].imgUrl%>" target="_blank"><img class="img" src="<%=cars[i].imgUrl%>"></a></td>
+                    <% } %>
+                    <td><form action="remover" method="POST"><input class="btn btn-sm btn-danger" type="hidden" name="carID" value="<%=cars[i].carID%>" readonly>
+                    <input class="btn btn-sm btn-danger" type="submit" value="REMOVER" readonly></form></td>
+                <% } %>
                 </tr>
               </tbody>
             </table>

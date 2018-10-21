@@ -1,15 +1,17 @@
 const controller = {
-  index: (app, req, res) => {
+  cadastrar: (app, req, res) => {
     let connection = app.server.dataBase();
     let carDAO = new app.app.models.CarsDAO(connection);
+    let car = req.body;
 
-    carDAO.listar((error, result) => {
+    carDAO.inserir(car, (error, result) => {
       if(error)
         throw error;
-      if(!result)
-        result = '';
-      res.render('index.ejs', {cars: result});
+      connection = null;
+      carDAO = null;
+      res.redirect('/');
     });
+
   }
 }
 

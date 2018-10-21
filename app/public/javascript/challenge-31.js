@@ -3,10 +3,14 @@
   // $ representa o new DOM('...')
   let companyName = $('[data-js="company"]');
   let companyPhone = $('[data-js="phone"]');
+  let maker = $('[data-js="maker"]');
+  let model = $('[data-js="model"]');
+  let year = $('[data-js="year"]');
+  let engine = $('[data-js="engine"]');
+  let imgUrl = $('[data-js="imgUrl"]');
+  let inputs = [maker, model, year, engine];
 
   function init(){
-    let idNumber = 0; // id para o carro cadastrado
-
     /* - - - JSON PARA O 'NAME' E 'PHONE' DA EMPRESA - - - */
     let ajax = new XMLHttpRequest();
     ajax.open('GET', 'json/company.json', true);
@@ -37,58 +41,43 @@
       $('[data-js="button"]').on('click', handleCadastrar);
     }
 
-    // Esta função seleciona o elemento table e adiciona o conteúdo
+    // Esta função seleciona os elementos dos inputs e envia um JSON ao servidor
     function handleCadastrar(event){
-      event.preventDefault();
-      let table = $('[data-js="cartable"]').get();
-      table.appendChild(createTableText());
+      // loop para verificar os campos
+      let i = 0;
+      while( i < inputs.length){
+        console.log(inputs[i].get().value);
+        let isAllValid = () => {
+          return inputs[i].get().value;
+        };
+        if(!isAllValid()){
+          alert('Os campos de FABRICANTE, MODELO, ANO e COR devem ser preenchidos corretamente!');
+          event.preventDefault();
+          return '';
+        }
+        i++;
+      }
+
+      /* JSON para uso de AJAX, que não é o caso deste site
+      function JsonCar(){
+        this.maker = $('[data-js="maker"]').get().value;
+        this.model = $('[data-js="model"]').get().value;
+        this.year = $('[data-js="year"]').get().value;
+        this.color = $('[data-js="engine"]').get().value;
+        this.img  = $('[data-js="imgUrl"]').get().value;
+      }
+
+      let car = new JsonCar();
+      const carJSON = JSON.stringify(car);
+      let ajax = new XMLHttpRequest();
+      ajax.open('POST', '/cadastrar');
+      ajax.setRequestHeader('Content-Type', 'Application/json'); // envia JSON para o servidor
+      ajax.send(carJSON);
+      */
+
     }
 
-    // Esta função cria os elementos que serão incluidos no table
-    function createTableText(){
-      idNumber++;
-
-      let fragment = document.createDocumentFragment();
-      let tr = document.createElement('tr');
-      let tdRemove = document.createElement('input');
-      let tdMaker = document.createElement('td');
-      let tdModel = document.createElement('td');
-      let tdYear = document.createElement('td');
-      let tdColor = document.createElement('td');
-      let tdImg = document.createElement('td');
-      let img = document.createElement('img');
-      let url = $('[data-js="image"]').get().value;
-
-      setTextValue(tdRemove, tdMaker, tdModel, tdYear, tdColor, tdImg, img, url);
-      return addElements(fragment, tr, tdRemove,tdMaker, tdModel, tdYear, tdColor, tdImg);
-    }
-
-    // Esta função setta os valores de cada coluna(td) da linha(tr)
-    function setTextValue(tdRemove, tdMaker, tdModel, tdYear, tdColor, tdImg, img, url){
-      tdRemove.setAttribute('type', 'checkbox');
-      tdRemove.setAttribute('data-js', idNumber);
-      tdMaker.textContent = $('[data-js="maker"]').get().value;
-      tdModel.textContent = $('[data-js="model"]').get().value;
-      tdYear.textContent = $('[data-js="year"]').get().value;
-      tdColor.textContent = $('[data-js="color"]').get().value;
-      img.setAttribute('src', url);
-      tdImg.appendChild(img);
-    }
-
-    // Esta função adiciona os elementos a tr e ao fragment
-    function addElements(fragment, tr, tdRemove,tdMaker, tdModel, tdYear, tdColor, tdImg){
-      tr.appendChild(tdMaker);
-      tr.appendChild(tdModel);
-      tr.appendChild(tdYear);
-      tr.appendChild(tdColor);
-      tr.appendChild(tdImg);
-      tr.appendChild(tdRemove);
-
-      fragment.appendChild(tr);
-      return fragment;
-    }
-
-    // Estas funções são executadas ao carregar o todo o document
+    // Estas funções são executadas ao carregar todo o document
     startEvents();
     getCompanyData();
   }

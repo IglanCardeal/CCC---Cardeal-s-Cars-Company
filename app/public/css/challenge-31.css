@@ -41,9 +41,9 @@ body{
   border: 2px ridge darkgrey;
   border-radius: 15px;
 }
-img{
+.img{
   max-block-size: 60px;
-  border: 2px groove rgba(0, 40, 200, 0.5);
+  border: 1px ridge rgb(0, 40, 200);
   border-radius: 8px;
 }
 #remover{

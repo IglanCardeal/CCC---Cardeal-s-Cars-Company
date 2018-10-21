@@ -5,7 +5,7 @@ const dataBase = () => {
         root: 'localhost',
         user: 'root',
         password: '',
-        database: ''
+        database: 'db_cars'
     });
 }
 
