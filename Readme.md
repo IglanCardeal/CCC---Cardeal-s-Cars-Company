@@ -8,5 +8,13 @@
   Na página inicial temos um formulário para cadastro de carro, onde informaremos os dados a serem informados e logo abaixo,
   temos a tabela de carros que estão cadastrados no banco de dados.<br>
   <img src="./description/home.png" />
-
+</p>
+<p>
+  Para começar a testar este projeto, será necessário realizar a conexão com o banco de dados MySQL ajustando os parâmetros no arquivo ./server/dataBase.js alterando para os dados do banco local.<br>
+  <img src="./description/dataBase.png" /><br>
+  Após isso executar o código sQL abaixo que irá criar a database e a tabela necessária para funcionar o projeto.<br>
+  <img src="./description/sql.png" /><br>
+</p>
+<p>
+  Por fim, para subir o site do projeto basta iniciar o servidor do MySQL e no terminal do projeto, executar o comando **npm run ccc** e acessar em qualquer navegador o endereço localhost:3000.
 </p>
