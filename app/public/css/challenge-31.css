@@ -2,6 +2,7 @@ body{
   background-image: url('../img/img1.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover; /*não redimensiona o bg quando altera o zoom da página*/
   background-position-y: 0px;
 }
 .interface{
