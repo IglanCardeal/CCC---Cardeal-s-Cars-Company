@@ -16,5 +16,5 @@
   <img src="./description/sql.png" /><br>
 </p>
 <p>
-  Por fim, para subir o site do projeto basta iniciar o servidor do MySQL e no terminal do projeto, executar o comando **npm run ccc** e acessar em qualquer navegador o endereço localhost:3000.
+  Por fim, para subir o site do projeto basta iniciar o servidor do MySQL e no terminal do projeto, executar o comando <strong>npm run ccc</strong> e acessar em qualquer navegador o endereço localhost:3000.
 </p>
