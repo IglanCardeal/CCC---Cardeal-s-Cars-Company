@@ -7,6 +7,6 @@
 <p>
   Na página inicial temos um formulário para cadastro de carro, onde informaremos os dados a serem informados e logo abaixo,
   temos a tabela de carros que estão cadastrados no banco de dados.<br>
-  ![home](./description/home.png)
+  <img src="./description/home.png" />
 
 </p>
