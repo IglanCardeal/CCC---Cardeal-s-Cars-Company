@@ -22,5 +22,5 @@
   Por fim, para subir o site do projeto basta instalar as dependências do NodeJS através do comando <strong>npm i</strong> e iniciar o servidor do MySQL, em seguida, no terminal do projeto, executar o comando <strong>npm run ccc</strong> e acessar em qualquer navegador o endereço localhost:3000.
 </p>
 <p>
-  Novas features serão incluidas como EDITAR, FILTRAR e requisições AJAX para evitar reloda total da página. Uma mesma versão desde pequeno projeto particular será feita usando o banco <a href="https://www.mongodb.com/">MongoDB</a> para armazenar os dados.<br><strong>Vida Longa ao JAVASCRIPT!!! :D</strong>
+  Novas features serão incluidas como EDITAR, FILTRAR e requisições AJAX para evitar reloda total da página. Uma mesma versão desde pequeno projeto particular será feita usando o banco de dados <a href="https://www.mongodb.com/">MongoDB</a> para armazenar os dados.<br><strong>Vida Longa ao JAVASCRIPT!!! :D</strong>
 </p>
