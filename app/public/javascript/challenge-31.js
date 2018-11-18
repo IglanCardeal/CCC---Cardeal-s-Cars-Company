@@ -36,12 +36,6 @@
     }
     /* - - -           FIM JSON                    - - - */
 
-    // Esta função adiciona um listener de eventos ao botão
-    function startEvents(){
-      $('[data-js="button"]').on('click', handleCadastrar);
-    }
-
-    // Esta função seleciona os elementos dos inputs e envia um JSON ao servidor
     function handleCadastrar(event){
       // loop para verificar os campos
       let i = 0;
@@ -57,24 +51,10 @@
         }
         i++;
       }
+    }
 
-      /* JSON para uso de AJAX, que não é o caso deste site
-      function JsonCar(){
-        this.maker = $('[data-js="maker"]').get().value;
-        this.model = $('[data-js="model"]').get().value;
-        this.year = $('[data-js="year"]').get().value;
-        this.color = $('[data-js="engine"]').get().value;
-        this.img  = $('[data-js="imgUrl"]').get().value;
-      }
-
-      let car = new JsonCar();
-      const carJSON = JSON.stringify(car);
-      let ajax = new XMLHttpRequest();
-      ajax.open('POST', '/cadastrar');
-      ajax.setRequestHeader('Content-Type', 'Application/json'); // envia JSON para o servidor
-      ajax.send(carJSON);
-      */
-
+    function startEvents(){
+      $('[data-js="button"]').on('click', handleCadastrar);
     }
 
     // Estas funções são executadas ao carregar todo o document
