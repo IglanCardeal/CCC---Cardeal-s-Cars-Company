@@ -5,7 +5,8 @@
   Este projeto consiste de um sistema simples de cadastro de carros, usando no front-end o framework <a href="https://getbootstrap.com/">Bootstrap</a> para estilizar a página e deixá-la responsiva e a biblioteca pessoal DOM( $ ) para uso em Javascript para validar os campos e o requisições AJAX para o nome e telefone da empresa no topo da página.
 </p>
 <p>
-  E para o back-end, usamos a plataforma NodeJS para uso de Javascript usando o framework <a href="https://expressjs.com/pt-br/">Express</a> e módulos auxiliares(EJS, Consign, express-validator, body-parser) e banco de dados <a href="https://www.mysql.com/">MySQL</a>.
+  E para o back-end, usamos a plataforma NodeJS para uso de Javascript usando o framework <a href="https://expressjs.com/pt-br/">Express</a> e módulos auxiliares(EJS, Consign, express-validator, body-parser) e banco de dados <a href="https://www.mysql.com/">MySQL</a>.<br>
+  Para auxiliar a conexão e manipulação do banco de dados, foi utilizado o ORM <a href="http://docs.sequelizejs.com/">Sequelize</a> para abstração da lógica aplicada a base de dados, separando assim a lógica de negócio da lógica de dados do MySQL. Lembrando que é possivel alterar o banco de dados relacional e caso seja feito, basta acrescentar o dialeto no arquivo de 'server/dataBase.js' no atributo 'dialect' do arquivo.
 </p>
 <p>
   Na página inicial temos um formulário para cadastro de carro, onde informaremos os dados a serem informados e logo abaixo,
@@ -13,9 +14,9 @@
   <img src="./description/home.png" />
 </p>
 <p>
-  Para começar a testar este projeto, será necessário realizar a conexão com o banco de dados MySQL ajustando os parâmetros no arquivo ./server/dataBase.js alterando para os dados do banco local.<br>
+  A conexão com o banco de dados agora é gerenciada pelo Sequelize. Abaixo fica definida a configuração do ORM para a conexão do banco:<br>
   <img src="./description/dataBase.png" /><br>
-  Após isso executar o código SQL abaixo que irá criar a database e a tabela necessária para funcionar o projeto.<br>
+  Agora basta definirmos a tabela 'tb_cars' através do model CarsDAO que através do Sequelize irá criar a tabela no banco caso a mesma não exista.<br>
   <img src="./description/sql.png" /><br>
 </p>
 <p>
