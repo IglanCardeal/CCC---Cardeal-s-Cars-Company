@@ -42,7 +42,7 @@
           </form>
         </div>
     </div>
-    <% if(cars){ %> <!-- if para verificar o objeto de resposta do servidor -->
+    <% if(hasCars){ %> <!-- if para verificar o objeto de resposta do servidor -->
       <div class="tabela">
         <div class="row">
           <div class="col-md-12">
@@ -71,7 +71,7 @@
                     <% if(cars[i].imgUrl){ %>
                       <td><a href="<%=cars[i].imgUrl%>" target="_blank"><img class="img" src="<%=cars[i].imgUrl%>"></a></td>
                     <% } %>
-                    <td><form action="remover" method="POST"><input class="btn btn-sm btn-danger" type="hidden" name="carID" value="<%=cars[i].carID%>" readonly>
+                    <td><form action="remover" method="POST"><input class="btn btn-sm btn-danger" type="hidden" name="carId" value="<%=cars[i].carId%>" readonly>
                     <input class="btn btn-sm btn-danger" type="submit" value="REMOVER" readonly></form></td>
                 <% } %>
                 </tr>

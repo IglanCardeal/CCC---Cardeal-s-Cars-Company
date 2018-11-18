@@ -1,18 +1,12 @@
-const controller = {
-  remover: (app, req, res) => {
-    let connection = app.server.dataBase();
-    let carDAO = new app.app.models.CarsDAO(connection);
-    let car = req.body;
-    console.log(car);
+const path = require('path');
+const CarsDAO = require(path.resolve('app', 'models', 'CarsDAO'));
 
-    carDAO.remover(car, (error, result) => {
-      if(error)
-        throw error;
-      connection = null;
-      carDAO = null;
+module.exports = (req, res, next) => {
+  CarsDAO.destroy({ where: {
+    carId: req.body.carId
+  } })
+    .then(_ => {
       res.redirect('/');
-    });
-  }
-};
-
-module.exports = controller;
+    })
+    .catch(e => console.log(e));
+}

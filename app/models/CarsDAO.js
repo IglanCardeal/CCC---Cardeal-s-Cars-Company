@@ -1,19 +1,35 @@
-// esta é a classe que realiza a manipulação no banco de listar, inserir e mover um registro.
-class CarsDAO{
+const path = require('path');
+const Sequelize = require('sequelize');
+const dbConnection = require(path.resolve('server', 'dataBase'));
 
-  constructor(connection){
-    this.connection = connection;
-    //listar
-    this.listar = (callback) => this.connection.query('SELECT * FROM tb_cars', callback);
-    //inserir;
-    this.inserir = (car, callback) => this.connection.query('INSERT INTO tb_cars SET ?',car , callback);
-    //remover;
-    this.remover = (car, callback) => {
-      const sql = 'DELETE FROM tb_cars WHERE carID = ?';
-      this.connection.query(sql, car.carID, callback);
-    };
-  }
-
+const CarsDAO = dbConnection.define('tb_cars', {
+  carId: {
+  type: Sequelize.INTEGER,
+  allowNull: false,
+  primaryKey: true,
+  autoIncrement: true,
+  unique: true
+},
+  maker: {
+  type: Sequelize.STRING,
+  allowNull: false
+},
+  model: {
+  type: Sequelize.STRING,
+  allowNull: false
+},
+  engine: {
+  type: Sequelize.FLOAT,
+  allowNull: false
+},
+  year: {
+  type: Sequelize.INTEGER,
+  allowNull: false
+},
+  imgUrl: {
+  type: Sequelize.STRING,
+  allowNull: true
 }
+});
 
-module.exports = _ => CarsDAO;
+module.exports = CarsDAO;

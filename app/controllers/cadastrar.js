@@ -1,18 +1,17 @@
-const controller = {
-  cadastrar: (app, req, res) => {
-    let connection = app.server.dataBase();
-    let carDAO = new app.app.models.CarsDAO(connection);
-    let car = req.body;
+const path = require('path');
+const CarsDAO = require(path.resolve('app', 'models', 'CarsDAO'));
 
-    carDAO.inserir(car, (error, result) => {
-      if(error)
-        throw error;
-      connection = null;
-      carDAO = null;
-      res.redirect('/');
-    });
-
-  }
+module.exports = (req, res, next) => {
+    CarsDAO.create({
+      carId: req.body.carId,
+      maker: req.body.maker,
+      model: req.body.model,
+      engine: req.body.engine,
+      year: req.body.year,
+      imgUrl: req.body.imgUrl
+    })
+      .then(_ => {
+        res.redirect('/');
+      })
+      .catch(e => console.log(e));
 }
-
-module.exports = controller;

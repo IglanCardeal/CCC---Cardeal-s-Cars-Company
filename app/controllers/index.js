@@ -1,16 +1,13 @@
-const controller = {
-  index: (app, req, res) => {
-    let connection = app.server.dataBase();
-    let carDAO = new app.app.models.CarsDAO(connection);
+const path = require('path');
+const CarsDAO = require(path.resolve('app', 'models', 'CarsDAO'));
 
-    carDAO.listar((error, result) => {
-      if(error)
-        throw error;
-      if(!result)
-        result = '';
-      res.render('index.ejs', {cars: result});
-    });
-  }
-}
-
-module.exports = controller;
+module.exports = (req, res, next) => {
+  CarsDAO.findAll()
+    .then(cars => {
+        res.render('index', {
+          cars: cars,
+          hasCars: cars.length > 0
+        });
+    })
+    .catch(e => console.log(e));
+};
