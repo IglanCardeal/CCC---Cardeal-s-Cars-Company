@@ -16,7 +16,7 @@
 <p>
   A conexão com o banco de dados agora é gerenciada pelo Sequelize. Abaixo fica definida a configuração do ORM para a conexão do banco:<br>
   <img src="./description/dataBase.png" /><br>
-  Agora basta definirmos a tabela 'tb_cars' através do model CarsDAO que através do Sequelize irá criar a tabela no banco caso a mesma não exista.<br>
+  Agora basta definirmos a tabela 'tb_cars' através do model CarsDAO que, através do Sequelize, irá criar a tabela no banco caso a mesma não exista.<br>
   <img src="./description/sql.png" /><br>
 </p>
 <p>
