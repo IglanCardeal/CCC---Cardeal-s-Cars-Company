@@ -2,7 +2,7 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const dbConnection = require(path.resolve('server', 'dataBase'));
 
-const CarsDAO = dbConnection.define('tb_cars', {
+module.exports = dbConnection.define('tb_cars', {
   carId: {
   type: Sequelize.INTEGER,
   allowNull: false,
@@ -31,5 +31,3 @@ const CarsDAO = dbConnection.define('tb_cars', {
   allowNull: true
 }
 });
-
-module.exports = CarsDAO;

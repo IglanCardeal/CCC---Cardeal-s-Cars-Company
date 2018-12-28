@@ -4,7 +4,10 @@ body{
   background-attachment: fixed;
   background-size: cover; /*não redimensiona o bg quando altera o zoom da página*/
   background-position-y: 0px;
+  margin: 0;
+  padding: 0;
 }
+
 .interface{
   width: 1200px;
   height: auto;
@@ -19,6 +22,7 @@ body{
   text-shadow: 0px 2px 3px darkblue;
   min-width: 400px;
 }
+
 #company, #phone{
   background-color: rgba(0,0,0,0);
   border: none;
@@ -27,13 +31,16 @@ body{
   text-decoration: underline;
   text-transform: uppercase;
 }
+
 .phone{
   margin-left: 50px;
 }
+
 .formulario, h2, label{
   color: whitesmoke;
   text-align: center;
 }
+
 .tabela{
   margin-top: 50px;
   color: whitesmoke;
@@ -42,14 +49,20 @@ body{
   border: 2px ridge darkgrey;
   border-radius: 15px;
 }
+
 .img{
   max-block-size: 60px;
   border: 1px ridge rgb(0, 40, 200);
   border-radius: 8px;
 }
+
 #remover{
   width: 100px;
 }
 .entrada, input{
   text-transform: capitalize;
 }
+
+  input:focus {
+    background-color: skyblue;
+  }

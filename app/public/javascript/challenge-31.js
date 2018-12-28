@@ -1,4 +1,4 @@
-;(function($) {
+; (($) => {
   'use strict';
   // $ representa o new DOM('...')
   let companyName = $('[data-js="company"]');
@@ -10,25 +10,25 @@
   let imgUrl = $('[data-js="imgUrl"]');
   let inputs = [maker, model, year, engine];
 
-  function init(){
+  function init() {
     /* - - - JSON PARA O 'NAME' E 'PHONE' DA EMPRESA - - - */
     let ajax = new XMLHttpRequest();
     ajax.open('GET', 'json/company.json', true);
     ajax.send();
 
-    function getCompanyData(){
+    function getCompanyData() {
       ajax.addEventListener('readystatechange', getJson, false);
     }
 
-    function getJson(){
+    function getJson() {
       let request = ajax.responseText;
-      if(request)
+      if (request)
         setJson();
       else
         companyName.get(0).value = '404 not found company name';
     }
 
-    function setJson(){
+    function setJson() {
       let json = JSON.parse(ajax.responseText);
       companyName.get(0).value = json.name;
       companyPhone.get(0).value = json.phone;
@@ -36,16 +36,16 @@
     }
     /* - - -           FIM JSON                    - - - */
 
-    function handleCadastrar(event){
+    function handleCadastrar(event) {
       // loop para verificar os campos
       let i = 0;
-      while( i < inputs.length){
+      while (i < inputs.length) {
         console.log(inputs[i].get().value);
-        let isAllValid = () => {
+        const isAllValid = () => {
           return inputs[i].get().value;
         };
-        if(!isAllValid()){
-          alert('Os campos de FABRICANTE, MODELO, ANO e COR devem ser preenchidos corretamente!');
+        if (!isAllValid()) {
+          alert('Os campos de FABRICANTE, MODELO, ANO e COR devem ser preenchidos!');
           event.preventDefault();
           return '';
         }
@@ -53,7 +53,7 @@
       }
     }
 
-    function startEvents(){
+    function startEvents() {
       $('[data-js="button"]').on('click', handleCadastrar);
     }
 
